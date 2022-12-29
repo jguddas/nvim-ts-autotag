@@ -269,7 +269,9 @@ M.close_tag = function ()
     if result == true and tag_name ~= nil then
         vim.cmd(string.format([[normal! a</%s>]],tag_name))
         vim.cmd[[normal! F>]]
+        return true
     end
+    return false
 end
 
 local function replace_text_node(node, tag_name)
